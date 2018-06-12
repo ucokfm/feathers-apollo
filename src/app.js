@@ -17,7 +17,7 @@ const appHooks = require('./app.hooks');
 const channels = require('./channels');
 const authentication = require('./authentication');
 const seeds = require('./seeds');
-const feathersApollo = require('./feathers-apollo');
+const graphql = require('./graphql');
 
 const app = express(feathers());
 
@@ -44,8 +44,8 @@ app.configure(authentication);
 app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
-// Set up apollo
-app.configure(feathersApollo);
+// Set up graphql
+app.configure(graphql);
 
 // Configure a middleware for 404s and the error handler
 // app.use(express.notFound());
