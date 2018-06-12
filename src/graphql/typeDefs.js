@@ -21,4 +21,8 @@ module.exports = gql`
     users: [User]
     user(id: Int): User,
   }
+
+  type Mutation {
+    createProduct(id: Int, name: String, price: Int): Product
+  }
 `;

@@ -29,5 +29,10 @@ module.exports = function (app) {
         return await userService.get(args.id);
       },
     },
+    Mutation: {
+      createProduct: async (parent, args, context, info) => {
+        return (await productService.create(args));
+      },
+    },
   };
 };
