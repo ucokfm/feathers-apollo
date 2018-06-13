@@ -26,5 +26,6 @@ module.exports = gql`
     createProduct(id: Int, name: String!, price: Int!): Product
     updateProduct(id: Int!, name: String!, price: Int!): Product
     patchProduct(id: Int!, name: String, price: Int): Product
+    removeProduct(id: Int!): Product
   }
 `;

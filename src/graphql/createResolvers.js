@@ -43,6 +43,9 @@ module.exports = function (app) {
         const { id, ...others } = args;
         return productService.patch(id, others);
       },
+      removeProduct: async (parent, args, context, info) => {
+        return productService.remove(args.id);
+      },
     },
   };
 };
