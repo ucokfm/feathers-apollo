@@ -6,7 +6,9 @@ module.exports = function (app) {
   return {
     Product: {
       owner: async (parent, args, context, info) => {
-        return userService.get(parent.ownerId);
+        if (parent.ownerId) {
+          return userService.get(parent.ownerId);
+        }
       },
     },
     User: {
@@ -31,7 +33,11 @@ module.exports = function (app) {
     },
     Mutation: {
       createProduct: async (parent, args, context, info) => {
-        return (await productService.create(args));
+        return productService.create(args);
+      },
+      updateProduct: async (parent, args, context, info) => {
+        const { id, ...others } = args;
+        return productService.update(id, others);
       },
     },
   };

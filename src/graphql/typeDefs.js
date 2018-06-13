@@ -24,5 +24,6 @@ module.exports = gql`
 
   type Mutation {
     createProduct(id: Int, name: String!, price: Int!): Product
+    updateProduct(id: Int!, name: String, price: Int): Product
   }
 `;
