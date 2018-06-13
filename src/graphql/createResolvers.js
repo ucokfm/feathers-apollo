@@ -39,6 +39,10 @@ module.exports = function (app) {
         const { id, ...others } = args;
         return productService.update(id, others);
       },
+      patchProduct: async (parent, args, context, info) => {
+        const { id, ...others } = args;
+        return productService.patch(id, others);
+      },
     },
   };
 };
