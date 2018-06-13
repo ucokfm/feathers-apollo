@@ -10,7 +10,7 @@ module.exports = gql`
 
   type User {
     id: Int,
-    name: String,
+    fullName: String,
     dateOfBirth: String
     products: [Product]
   }
@@ -27,5 +27,9 @@ module.exports = gql`
     updateProduct(id: Int!, name: String!, price: Int!): Product
     patchProduct(id: Int!, name: String, price: Int): Product
     removeProduct(id: Int!): Product
+    createUser(email: String!, password: String!, fullName: String, dateOfBirth: String): User
+    updateUser(id: Int!, fullName: String, password: String, dateOfBirth: String): User
+    patchUser(id: Int!, fullName: String, password: String, dateOfBirth: String): User
+    removeUser(id: Int!): User
   }
 `;

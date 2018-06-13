@@ -3,9 +3,9 @@ module.exports = async function (app) {
   const userResult = await userService.find();
   if (userResult.total === 0) {
     await userService.create([
-      { id: 1, name: 'John Doe', dateOfBirth: '1991-01-11' },
-      { id: 2, name: 'Jane Doe', dateOfBirth: '1992-02-22' },
-      { id: 3, name: 'Richard Roe', dateOfBirth: '1993-03-23' },
+      { id: 1, fullName: 'John Doe', dateOfBirth: '1991-01-11' },
+      { id: 2, fullName: 'Jane Doe', dateOfBirth: '1992-02-22' },
+      { id: 3, fullName: 'Richard Roe', dateOfBirth: '1993-03-23' },
     ]);
   }
   const productService = app.service('products');

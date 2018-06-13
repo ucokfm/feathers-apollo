@@ -46,6 +46,20 @@ module.exports = function (app) {
       removeProduct: async (parent, args, context, info) => {
         return productService.remove(args.id);
       },
+      createUser: async (parent, args, context, info) => {
+        return userService.create(args);
+      },
+      updateUser: async (parent, args, context, info) => {
+        const { id, ...others } = args;
+        return userService.update(id, others);
+      },
+      patchUser: async (parent, args, context, info) => {
+        const { id, ...others } = args;
+        return userService.patch(id, others);
+      },
+      removeUser: async (parent, args, context, info) => {
+        return userService.remove(args.id);
+      },
     },
   };
 };
