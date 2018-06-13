@@ -6,12 +6,12 @@ module.exports = function (app) {
   return {
     Product: {
       owner: async (parent, args, context, info) => {
-        return userService.get(parent.owner);
+        return userService.get(parent.ownerId);
       },
     },
     User: {
       products: async (parent, args, context, info) => {
-        return (await productService.find({ query: { owner: parent.id } }))
+        return (await productService.find({ query: { ownerId: parent.id } }))
           .data;
       },
     },
