@@ -1,0 +1,9 @@
+{
+  "name": "feathers-apollo",
+  "version": "0.0.0",
+  "description": "Feathers Apollo",
+  "main": "index.js",
+  "repository": "https://github.com/ucokfm/feathers-apollo",
+  "author": "Ucok Freddy <ucokfm@gmail.com>",
+  "license": "MIT"
+}
